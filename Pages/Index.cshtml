@@ -1,0 +1,39 @@
+﻿@page
+@model BookManagement.Pages.IndexModel
+@{
+    ViewData["Title"] = "Book List";
+}
+
+<h1>Book List</h1>
+
+<p>
+    <a class="btn btn-primary" asp-page="Create">Add New Book</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>ISBN</th>
+            <th>Published Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model.Book)
+        {
+            <tr>
+                <td>@book.Title</td>
+                <td>@book.Author</td>
+                <td>@book.ISBN</td>
+                <td>@book.PublishedDate.ToShortDateString()</td>
+                <td>
+                    <a asp-page="Edit" asp-route-id="@book.Id">Edit</a> |
+                    <a asp-page="Details" asp-route-id="@book.Id">Details</a> |
+                    <a asp-page="Delete" asp-route-id="@book.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

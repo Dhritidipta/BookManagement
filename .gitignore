@@ -1,0 +1,17 @@
+bin/
+obj/
+
+*.user
+*.suo
+.vs/
+.vscode/
+.idea/
+*.csproj.user
+
+*.dll
+*.exe
+*.log
+
+*.tmp
+*.temp
+*.bak
